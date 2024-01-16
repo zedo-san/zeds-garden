@@ -3,12 +3,12 @@
     <div class="min-w-96">
       <UCard>
         <template #header>
-          <h2 class="text-3xl font-semibold text-black">Login</h2>
+          <h2 class="text-3xl font-semibold text-black">Admin Login</h2>
         </template>
 
         <UForm :validate="validate" :state="state" class="space-y-4" @submit="onSubmit">
-          <UFormGroup label="Email" name="email">
-            <UInput v-model="state.email" :ui="{ size: 'md' }" />
+          <UFormGroup label="Username" name="username">
+            <UInput v-model="state.username" :ui="{ size: 'md' }" />
           </UFormGroup>
 
           <UFormGroup label="Password" name="password">
@@ -32,13 +32,13 @@ definePageMeta({
 })
 
 const state = reactive({
-  email: undefined,
+  username: undefined,
   password: undefined
 })
 
 const validate = (state: any): FormError[] => {
   const errors = []
-  if (!state.email) errors.push({ path: 'email', message: 'Required' })
+  if (!state.username) errors.push({ path: 'username', message: 'Required' })
   if (!state.password) errors.push({ path: 'password', message: 'Required' })
   return errors
 }
@@ -46,6 +46,6 @@ const validate = (state: any): FormError[] => {
 async function onSubmit (event: FormSubmitEvent<any>) {
   // Do something with data
   console.log(event.data)
-  navigateTo('/')
+  navigateTo('/admin/inventory')
 }
 </script>

@@ -1,29 +1,3 @@
-<script lang="ts" setup>
-import type { FormError, FormSubmitEvent } from '#ui/types'
-
-  definePageMeta({
-  layout: 'public'
-})
-
-const state = reactive({
-  email: undefined,
-  password: undefined
-})
-
-const validate = (state: any): FormError[] => {
-  const errors = []
-  if (!state.email) errors.push({ path: 'email', message: 'Required' })
-  if (!state.password) errors.push({ path: 'password', message: 'Required' })
-  return errors
-}
-
-async function onSubmit (event: FormSubmitEvent<any>) {
-  // Do something with data
-  console.log(event.data)
-  navigateTo('/')
-}
-</script>
-
 <template>
   <div class="min-h-screen flex items-center justify-center">
     <div class="min-w-96">
@@ -49,3 +23,28 @@ async function onSubmit (event: FormSubmitEvent<any>) {
     </div>
   </div>
 </template>
+<script lang="ts" setup>
+import type { FormError, FormSubmitEvent } from '#ui/types'
+
+  definePageMeta({
+  layout: 'public'
+})
+
+const state = reactive({
+  email: undefined,
+  password: undefined
+})
+
+const validate = (state: any): FormError[] => {
+  const errors = []
+  if (!state.email) errors.push({ path: 'email', message: 'Required' })
+  if (!state.password) errors.push({ path: 'password', message: 'Required' })
+  return errors
+}
+
+async function onSubmit (event: FormSubmitEvent<any>) {
+  // Do something with data
+  console.log(event.data)
+  navigateTo('/')
+}
+</script>

@@ -6,7 +6,7 @@
         <template #empty-state>
           <div class="flex flex-col items-center justify-center py-6 gap-3">
             <span class="italic text-sm">No cart items.</span>
-            <UButton to="/" icon="i-heroicons-shopping-cart" label="Show now" />
+            <UButton to="/" icon="i-heroicons-shopping-cart" label="Shop now" />
           </div>
         </template>
         <template #product.price-data="{row}">
@@ -25,9 +25,11 @@
         </template>
       </UTable>
       <hr class="border-t border-gray-400" />
-      <div class="flex justify-between container mx-auto p-4 text-xl font-bold">
+      <div class="flex justify-between items-center container mx-auto p-4 text-xl font-bold">
         <p>Overall Total:</p>
-        <span class="block w-32 ">${{ overallTotal }} </span>
+        <UButton size="xl" icon="i-heroicons-credit-card" :disabled="overallTotal === 0">
+          <span class="text-xl">Checkout: ${{ overallTotal }}</span>
+        </UButton>
       </div>
     </div>
   </GeneralContainer>

@@ -3,6 +3,11 @@
     <h2 class="text-3xl font-bold mb-4">Inventory</h2>
     <UCard class="border rounded-md bg-white shadow">
       <UTable :columns="selectedColumns" :rows="products">
+        <template #title-data="{ row }">
+          <NuxtLink :to="`/admin/products/${row.id}`" class="hover:underline">
+            <p>{{ row.title }}</p>
+          </NuxtLink>
+        </template>
         <template #category.name-data="{ row }">
           <ProductCategoryBadge :category-id="row.category.id" :category-name="row.category.name" />
         </template>

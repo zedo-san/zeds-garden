@@ -26,14 +26,9 @@
           </NuxtLink>
         </nav>
 
-        <a href="#" class="flex items-center px-4 -mx-2">
-          <img
-            class="object-cover mx-2 rounded-full h-9 w-9"
-            src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-            alt="avatar"
-          />
-          <span class="mx-2 font-medium text-gray-800 dark:text-gray-200">John Doe</span>
-        </a>
+        <UButton to="/admin/login" size="xl" variant="outline" color="lime" icon="i-heroicons-arrow-left-on-rectangle">
+          <span class="mx-2 font-medium">Logout</span>
+        </UButton>
       </div>
     </aside>
     <div class="overflow-y-auto w-full relative">
@@ -45,7 +40,7 @@
 <script lang="ts" setup>
 const route = useRoute();
 const navItems = [
-  {label: 'Analytics', link: '/admin', icon: 'i-heroicons-chart-bar', activeIcon: 'i-heroicons-chart-bar-16-solid'},
+  // {label: 'Analytics', link: '/admin', icon: 'i-heroicons-chart-bar', activeIcon: 'i-heroicons-chart-bar-16-solid'},
   {label: 'Inventory', link: '/admin/inventory', icon: 'i-heroicons-circle-stack', activeIcon: 'i-heroicons-circle-stack-16-solid'}
 ]
 </script>
